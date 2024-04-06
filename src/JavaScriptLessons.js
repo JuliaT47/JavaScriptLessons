@@ -1583,3 +1583,16 @@ socket.onerror = function (err) {
 can only be in lower case. 
 cd jshomework
 npm start*/
+
+// Homework 13
+import React, { useState } from "react";
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Ви натиснули {count} разів</p>
+      <button onClick={() => setCount(count + 1)}> Натисни мене </button>
+    </div>
+  );
+};
+console.log("test");
