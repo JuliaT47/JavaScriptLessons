@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 // When to Use var, let, or const?
 // 1. Always declare variables
 
@@ -1579,20 +1580,23 @@ socket.onerror = function (err) {
 };*/
 
 // Lesson 34
-/* npx create-react-app jshomework, lasrt word name of the project, 
+/* npx create-react-app jshomework, last word name of the project, 
 can only be in lower case. 
 cd jshomework
 npm start*/
 
 // Homework 13
-import React, { useState } from "react";
-const Counter = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <p>Ви натиснули {count} разів</p>
-      <button onClick={() => setCount(count + 1)}> Натисни мене </button>
-    </div>
-  );
-};
-console.log("test");
+// const Counter = () => {
+//   const [count, setCount] = useState(0);
+//   return (
+//     <div>
+//       <p>Ви натиснули {count} разів</p>
+//       <button onClick={() => setCount(count + 1)}> Натисни мене </button>
+//     </div>
+//   );
+// };
+// console.log("test");
+
+export default function Square() {
+  return <button className="square">X</button>;
+}

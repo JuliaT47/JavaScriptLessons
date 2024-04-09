@@ -1,0 +1,20 @@
+body {
+  margin: 20px;
+  color: rgb(92, 92, 92);
+}
+.square {
+  width: 45px;
+  height: 45px;
+  background-color: rgb(255, 192, 255);
+  border-color: rgba(255, 255, 0, 0.518);
+  color: rgb(92, 92, 92);
+}
+.square:active {
+  background-color: rgba(255, 255, 0, 0.518);
+}
+.board-row {
+  display: flex;
+}
+.winning {
+  background-color: rgba(255, 255, 0, 0.518);
+}
