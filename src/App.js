@@ -1,14 +1,10 @@
 import "./JavaScriptLessons";
 import "./App.css";
-import Home from "./modules/Home";
+import "./modules/Home";
 import { useState } from "react";
 
 function App() {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+  return <div></div>;
 }
 
 // export default App;
