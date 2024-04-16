@@ -1746,3 +1746,32 @@ npm start*/
 //     return { winner: "draw", winningSquares: [] };
 //   }
 // }
+
+// React Lesson 38
+
+// Life cycle hooks
+// import { Component } from "react";
+// class MyClassComponent extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { count: 1 };
+
+//     console.log("My Class Component Constructor");
+//   }
+//   componentDidMount() {
+//     console.log("Component did mount");
+//   }
+//   shouldComponentUpdate(nextProps, nextState) {
+//     if (this.props.name !== nextProps.name) {
+//       return true;
+//     }
+//     return false;
+//   }
+//   componentDidUpdate(prevProps, prevState) {}
+//   componentWillUnmount() {}
+//   render() {
+//     return <div>MycClassComponent</div>;
+//   }
+// }
+
+// export default MyClassComponent;
