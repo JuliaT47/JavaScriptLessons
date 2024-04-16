@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 // When to Use var, let, or const?
 // 1. Always declare variables
 
@@ -1775,3 +1775,147 @@ npm start*/
 // }
 
 // export default MyClassComponent;
+
+//timer button
+// function App() {
+//   const [isShowTimer, setIsShowTimer] = useState(false);
+//   return (
+//     <div>
+//       <header>
+//         {isShowTimer ? <MyClassComponent /> : <ListComponent />}
+//         <button onClick={() => setIsShowTimer((prev) => !prev)}>
+//           Show Timer
+//         </button>
+//       </header>
+//     </div>
+//   );
+// }
+// // when adding new elements, it is only that new element that updates on the page, the whole page does not need to reload.
+// export default App;
+
+// Lesson 39 Hooks
+
+// useEffect
+// function Hooks() {
+//   const [value, setValue] = useState(0);
+//   const [isMounted, setIsMounted] = useState(false);
+
+//   useEffect(() => {
+//     console.log("UseEffect mounted");
+//   }, []);
+
+//   useEffect(() => {
+//     console.log("UseEffect updated");
+//   }, [value]);
+
+//   const handleClick = () => {
+//     // setValue(value + 1);
+//     setIsMounted(!isMounted);
+//   };
+
+//   const UnmountedComponent = () => {
+//     useEffect(() => {
+//       return () => {
+//         console.log("UseEffect Unmounted");
+//       };
+//     }, []);
+//     return <div>componentWillUnmount</div>;
+//   };
+
+//   return (
+//     <div>
+//       <p>{value}</p>
+//       {isMounted ? <UnmountedComponent /> : <p>Text</p>}
+//       <button onClick={handleClick}>Click</button>
+//     </div>
+//   );
+// }
+// export default Hooks;
+
+// useState
+// function Hooks() {
+//   const [value, setValue] = useState(0);
+
+//   const handleClick = () => {
+//     setValue((prevValue) => prevValue + 1);
+//     setValue((prevValue) => prevValue + 1);
+//     setValue((prevValue) => prevValue + 1);
+//   };
+
+//   return (
+//     <div>
+//       <p>{value}</p>
+//       <button onClick={handleClick}>Click</button>
+//     </div>
+//   );
+// }
+// export default Hooks;
+
+//useReducer
+// function Hooks() {
+//   const reducer = (state, action) => {
+//     if (action.type === "increment") {
+//       return { count: state.count + 1 };
+//     }
+//     if (action.type === "decrement") {
+//       return { count: state.count - 1 };
+//     }
+//     if (action.type === "reset") {
+//       return { count: 0 };
+//     }
+//   };
+
+//   const [state, dispatch] = useReducer(reducer, { count: 0 }); // Pass reducer as first argument
+
+//   const handleClick = (type) => {
+//     dispatch({ type });
+//   };
+
+//   return (
+//     <div>
+//       <p>{state.count}</p>
+//       <button onClick={() => handleClick("increment")}>Add</button>
+//       <button onClick={() => handleClick("decrement")}>Deduct</button>
+//       <button onClick={() => handleClick("reset")}>Reset</button>
+//     </div>
+//   );
+// }
+
+// export default Hooks;
+
+//useRef
+
+//1
+// function Hooks() {
+//   const headerRef = useRef();
+//   console.log(headerRef);
+//   return (
+//     <div>
+//       <header ref={headerRef}>
+//         <p>Text</p>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default Hooks;
+
+//2
+function Hooks() {
+  const inputRef = useRef();
+  const handleFocus = () => {
+    inputRef.current.focus();
+    console.log(inputRef.current.value);
+  };
+  return (
+    <div>
+      <header>
+        <input ref={inputRef} />
+        <p>Text</p>
+        <button onClick={handleFocus}>Focus me</button>
+      </header>
+    </div>
+  );
+}
+
+export default Hooks;
