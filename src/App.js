@@ -4,9 +4,7 @@ import Hooks from "./JavaScriptLessons";
 function App() {
   return (
     <div>
-      <header>
-        <Hooks />
-      </header>
+      <header>{/* <Hooks /> */}</header>
     </div>
   );
 }

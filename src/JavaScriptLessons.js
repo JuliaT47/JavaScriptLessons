@@ -1,4 +1,12 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
+  memo,
+} from "react";
 // When to Use var, let, or const?
 // 1. Always declare variables
 
@@ -1901,21 +1909,128 @@ npm start*/
 // export default Hooks;
 
 //2
-function Hooks() {
-  const inputRef = useRef();
-  const handleFocus = () => {
-    inputRef.current.focus();
-    console.log(inputRef.current.value);
-  };
-  return (
-    <div>
-      <header>
-        <input ref={inputRef} />
-        <p>Text</p>
-        <button onClick={handleFocus}>Focus me</button>
-      </header>
-    </div>
-  );
-}
+// function Hooks() {
+//   const inputRef = useRef();
+//   const handleFocus = () => {
+//     inputRef.current.focus();
+//     console.log(inputRef.current.value);
+//   };
+//   return (
+//     <div>
+//       <header>
+//         <input ref={inputRef} />
+//         <p>Text</p>
+//         <button onClick={handleFocus}>Focus me</button>
+//       </header>
+//     </div>
+//   );
+// }
 
-export default Hooks;
+// export default Hooks;
+
+// Lesson 41 Hooks
+//useMemo
+// function Hooks() {
+//   const [list, setList] = useState([1, 2, 3, 4, 5]);
+//   const memoList = useMemo(() => {
+//     return list;
+//   }, [list]);
+//   const handleListChange = () => {
+//     setList([...list, 6]);
+//   };
+
+//   return (
+//     <div>
+//       {memoList.map((item, index) => (
+//         <p key={index}>{item}</p>
+//       ))}
+//       <button onClick={handleListChange}>Add</button>
+//     </div>
+//   );
+// }
+// export default Hooks;
+
+//useCallback
+
+// function Hooks() {
+//   const [list, setList] = useState([1, 2, 3, 4, 5]);
+//   const handleUseCallBack = useCallback(() => {
+//     setList([...list, 6]);
+//   }, []);
+
+//   useEffect(() => {
+//     handleUseCallBack();
+//     console.log("render");
+//   }, [handleUseCallBack]);
+
+//   const handleClick = () => setList([]);
+
+//   return (
+//     <div>
+//       <button onClick={handleClick}>Click me</button>
+//     </div>
+//   );
+// }
+// //button doesnt work because useCall back stops it from updating
+// export default Hooks;
+
+//React.memo
+
+//childComponent
+// const ChildComponent = ({ item }) => {
+//   return <div>{item}</div>;
+// };
+// export { ChildComponent };
+// //childComponent
+// //SecondChild
+// const areEqual = (prevProps, nextProps) => {
+//   return prevProps.object.name !== nextProps.object.name;
+// };
+// const SecondChild = memo(() => {
+//   console.log("Second Child Render");
+//   return <div></div>;
+// }, areEqual); //memo stops the child component from rendering every time
+// export { SecondChild };
+// //SecondChild
+
+// function Hooks() {
+//   const [list, setList] = useState([1, 2, 3, 4, 5]);
+//   return (
+//     <div>
+//       <SecondChild />
+//       {list.map((item, index) => {
+//         return <ChildComponent key={index} item={item} />;
+//       })}
+//       <button onClick={() => setList([...list, 6])}>On Click</button>
+//     </div>
+//   );
+// }
+
+// export default Hooks;
+
+//Custom hooks
+// create seperate file that starts with use
+//useCounter
+// export const useCounter = () => {
+//   const [value, setValue] = useState(0);
+//   const increment = () => {
+//     setValue(value + 1);
+//   };
+//   const decrement = () => {
+//     setValue(value - 1);
+//   };
+//   return { value, increment, decrement };
+// };
+// //useCounter
+// // function where we are using useCounter
+// function Hooks() {
+//   const { value, increment, decrement } = useCounter();
+//   return (
+//     <div>
+//       <p>{value}</p>
+//       <button onClick={increment}>increment</button>
+//       <button onClick={decrement}>decrement </button>
+//     </div>
+//   );
+// }
+// export default Hooks;
