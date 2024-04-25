@@ -1,12 +1,13 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useRef,
-  useState,
-  memo,
-} from "react";
+// import React, {
+//   useCallback,
+//   useEffect,
+//   useMemo,
+//   useReducer,
+//   useRef,
+//   useState,
+//   memo,
+// } from "react";
+
 // When to Use var, let, or const?
 // 1. Always declare variables
 
@@ -2034,3 +2035,49 @@ npm start*/
 //   );
 // }
 // export default Hooks;
+
+// Lesson 42 CSS styling
+
+// using styling inside the js code, has limitations so can only be used for small tasks.
+// const styles = {
+//   containerAqua: { padding: 30, backgroundColor: "aqua" },
+//   containerBlue: { padding: 30, backgroundColor: "blue" },
+// };
+
+// const ProductList = () => {
+//   const [state, setState] = useState(false);
+//   const changeBColor = () => {
+//     setState(!state);
+//   };
+//   return (
+//     <div style={state ? styles.containerAqua : styles.containerBlue}>
+//       {PERSONS.map((person) => (
+//         <PersonListItem key={person.id} person={person} />
+//       ))}
+//       <button onClick={changeBColor}>Change Color</button>
+//     </div>
+//   );
+// };
+
+// or use   <div className={`container ${state ? "containerBlue" : "containerAqua"}`}>
+// when adding syles through css
+
+//using className library
+// const setStyleBColor = (type) => {
+//     if (type === "blue") {
+//       return "blueColor";
+//     }
+//     if (type === "red") {
+//       return "redColor";
+//     }
+//   };
+
+//   return (
+//     <div className={`${styles.container} ${styles[setStyleBColor("red")]}`}>
+//       {PERSONS.map((person) => (
+//         <PersonListItem key={person.id} person={person} />
+//       ))}
+//       <button onClick={changeBColor}>Change Color</button>
+//     </div>
+//   );
+// or  <div className={classNames(styles.container, { [styles.blueColor]: true })}>

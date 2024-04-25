@@ -1,10 +1,12 @@
 import "./App.css";
-import Hooks from "./JavaScriptLessons";
+import ProductList from "./CSS Styling/CSSStyling";
 
 function App() {
   return (
     <div>
-      <header>{/* <Hooks /> */}</header>
+      <header>
+        <ProductList />
+      </header>
     </div>
   );
 }
