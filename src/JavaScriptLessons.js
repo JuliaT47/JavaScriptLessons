@@ -1,12 +1,14 @@
-// import React, {
-//   useCallback,
-//   useEffect,
-//   useMemo,
-//   useReducer,
-//   useRef,
-//   useState,
-//   memo,
-// } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
+  memo,
+} from "react";
+
+import { debounce } from "lodash";
 
 // When to Use var, let, or const?
 // 1. Always declare variables
@@ -2081,3 +2083,167 @@ npm start*/
 //     </div>
 //   );
 // or  <div className={classNames(styles.container, { [styles.blueColor]: true })}>
+
+//Lesson 43
+// Uncontrolled form
+
+// const UncontrolledForm = () => {
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     const name = event.target.FirstName.value;
+//     const email = event.target.Email.value;
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <label htmlFor="FirstName">Name</label>
+//       <input type="text" name="FirstName" id="FirstName" />
+//       <label htmlFor="Email">Email</label>
+//       <input type="email" name="Email" id="Email" />
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// };
+// export default UncontrolledForm;
+
+// const UncontrolledForm = () => {
+//   const formRef = useRef();
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     console.log(formRef);
+//     console.log(formRef.current);
+
+//     formRef.current.reset();
+//   };
+
+//   return (
+//     <form ref={formRef} onSubmit={handleSubmit}>
+//       <label htmlFor="FirstName">Name</label>
+//       <input type="text" name="FirstName" id="FirstName" />
+//       <label htmlFor="Email">Email</label>
+//       <input type="email" name="Email" id="Email" />
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// };
+// export default UncontrolledForm;
+
+// Controlled form
+
+// const ControlledForm = () => {
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [isChecked, setIsChecked] = useState("");
+//   const [radio, setRadio] = useState("");
+//   const [select, setSelect] = useState("");
+
+//   const selectOption = [
+//     { id: 1, value: "option 1" },
+//     { id: 2, value: "option 2" },
+//     { id: 3, value: "option 3" },
+//   ];
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//   };
+
+//   const handleNameChange = debounce((event) => {
+//     // debounce stoped input from working
+//     const name = event.target.value;
+//     setName(event.target.value);
+//     console.log(event.target);
+//   }, 1000);
+
+//   const handleEmailChange = (event) => {
+//     const email = event.target.value;
+//     setEmail(email);
+//   };
+
+//   const handleCheckboxChange = (event) => {
+//     const isChecked = event.target.checked;
+//     setIsChecked(isChecked);
+//   };
+
+//   const handleRadioChange = (event) => {
+//     const radio = event.target.name;
+//     setRadio(radio);
+//   };
+
+//   const handleSelectChange = (event) => {
+//     const select = event.target.value;
+//     setSelect(select);
+//   };
+//   return (
+//     <>
+//       <form onSubmit={handleSubmit}>
+//         <label htmlFor="FirstName">Name</label>
+//         <input
+//           onChange={handleNameChange}
+//           value={name}
+//           type="text"
+//           name="FirstName"
+//           id="FirstName"
+//         />
+//         <label htmlFor="Email">Email</label>
+//         <input
+//           onChange={handleEmailChange}
+//           value={email}
+//           type="email"
+//           name="Email"
+//           id="Email"
+//         />
+//         <label htmlFor="checkbox">Checkbox</label>
+//         <input
+//           onChange={handleCheckboxChange}
+//           checked={isChecked}
+//           type="checkbox"
+//           name="checkbox"
+//           id="checkbox"
+//         />
+//         <label htmlFor="radio1">Radio 1</label>
+//         <input
+//           onChange={handleRadioChange}
+//           checked={radio === "radio1"}
+//           type="radio"
+//           name="radio1"
+//           id="radio1"
+//         />
+//         <label htmlFor="radio2">Radio 2 </label>
+//         <input
+//           onChange={handleRadioChange}
+//           checked={radio === "radio2"}
+//           type="radio"
+//           name="radio2"
+//           id="radio2"
+//         />
+//         <label htmlFor="select">Select </label>
+//         <select onChange={handleSelectChange} name="select" id="select">
+//           {selectOption.map((option) => (
+//             <option key={option.id}>{option.value}</option>
+//           ))}
+//         </select>
+//         <button type="submit">Submit</button>
+//       </form>
+//       <div>
+//         <p>
+//           First Name: <strong>{name}</strong>
+//         </p>
+//         <p>
+//           Email: <stong>{email}</stong>
+//         </p>
+//         <p>
+//           Checkbox: <stong>{isChecked.toString()}</stong>
+//         </p>
+//         <p>
+//           Select: <stong>{select}</stong>
+//         </p>
+//       </div>
+//     </>
+//   );
+// };
+// export default ControlledForm;
+
+// Formik forms
+
+// Lesson 45
+

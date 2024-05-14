@@ -1,12 +1,18 @@
 import "./App.css";
-import ProductList from "./CSS Styling/CSSStyling";
+import { Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <header>
-        <ProductList />
+        hello
+        <a href="/">Home</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
       </header>
+      <main>
+        <Routes></Routes>
+      </main>
     </div>
   );
 }
