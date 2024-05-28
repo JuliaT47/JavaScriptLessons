@@ -1,18 +1,20 @@
 import "./App.css";
-import { Routes } from "react-router-dom";
+import HttpReq from "./Module 44/Http";
+import QueryApp from "./Module 44/Query";
+// import { Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <header>
-        hello
+        <QueryApp />
+        {/* <HttpReq /> */}
+        {/* hello
         <a href="/">Home</a>
         <a href="/contact">Contact</a>
-        <a href="/about">About</a>
+        <a href="/about">About</a> */}
       </header>
-      <main>
-        <Routes></Routes>
-      </main>
+      <main>{/* <Routes></Routes> */}</main>
     </div>
   );
 }
