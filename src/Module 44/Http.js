@@ -10,12 +10,16 @@ function HttpReq() {
   const { data: contacts, isLoading, error } = useFetch("contacts");
 
   useEffect(() => {
-    setData(contacts);
+    if (contacts) {
+      setTimeout(() => {
+        setData(contacts);
+      }, 2000);
+    }
   }, [contacts]);
 
   const addContact = async () => {
     setIsPostLoading(true);
-    const payload = { name: "Kostya", lastName: "Skywalker", date: Date.now() };
+    const payload = { name: "Kostya", lastName: "Skywalker"};
     const response = await axios.post("contacts", payload);
     setData((prev) => [...prev, response.data]);
     setIsPostLoading(false);

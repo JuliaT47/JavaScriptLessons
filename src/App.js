@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <header>
-        <QueryApp />
+        {/* <QueryApp /> */}
         {/* <HttpReq /> */}
         {/* hello
         <a href="/">Home</a>

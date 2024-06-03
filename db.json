@@ -1,16 +1,24 @@
 {
   "contacts": [
     {
+      "id": "1",
+      "name": "Jules",
+      "lastName": "Skywalker"
+    },
+    {
+      "id": "2",
+      "name": "Sahs",
+      "lastName": "Skywalker"
+    },
+    {
       "id": "68cf",
       "name": "Kostya",
-      "lastName": "Skywalker",
-      "date": ""
+      "lastName": "Skywalker"
     },
     {
       "name": "Julia",
       "lastName": "Skywalker",
-      "id": "f77a",
-      "date": ""
+      "id": "f77a"
     }
   ]
 }
