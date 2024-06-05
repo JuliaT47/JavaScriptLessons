@@ -19,6 +19,23 @@
       "name": "Julia",
       "lastName": "Skywalker",
       "id": "f77a"
+    },
+    {
+      "id": "2640",
+      "name": "Luke",
+      "lastName": "Skywalker"
+    },
+    {
+      "id": "783e",
+      "name": "Luke",
+      "lastName": "Skywalker"
+    }
+  ],
+  "auth": [
+    {
+      "id": 1,
+      "username": "Julia",
+      "email": "kawaiineko@gmail.com"
     }
   ]
 }

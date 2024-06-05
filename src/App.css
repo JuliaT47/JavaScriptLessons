@@ -2,6 +2,27 @@ body {
   margin: 20px;
   color: rgb(92, 92, 92);
 }
+a {
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
+}
+.link {
+  color: rgb(92, 92, 92);
+}
+header {
+  background-color: grey;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  text-align: center;
+}
 .square {
   width: 45px;
   height: 45px;
@@ -17,4 +38,7 @@ body {
 }
 .winning {
   background-color: rgba(255, 255, 0, 0.518);
+}
+.active {
+  color: rgb(222, 35, 144);
 }
