@@ -10,6 +10,7 @@ const SingleContact = () => {
   //   });
   // for use with id
   console.log(params);
+
   return <h3>SingleContact</h3>;
 };
 export default SingleContact;

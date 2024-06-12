@@ -1,9 +1,5 @@
-// const Contacts = () => {
-//   return <h2>Contacts</h2>;
-// };
-// export default Contacts;
 import { useMutation, useQuery } from "react-query";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { addContact, deleteContact, getContactsList } from "./Api";
 import { useLocation, useNavigate } from "react-router";
 

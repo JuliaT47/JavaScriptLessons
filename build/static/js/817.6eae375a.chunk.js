@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgsreact=self.webpackChunkgsreact||[]).push([[817],{817:(e,s,t)=>{t.r(s),t.d(s,{default:()=>r});var c=t(216),n=t(579);const r=()=>{const e=(0,c.Zp)();return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)("h2",{children:"About"}),(0,n.jsx)("button",{onClick:()=>e(-1),children:"Get back"})]})}}}]);
+//# sourceMappingURL=817.6eae375a.chunk.js.map
