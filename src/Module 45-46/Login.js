@@ -2,12 +2,14 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import AuthContext from "./authContext";
+import { useSelector } from "react-redux";
 
-const Login = ({ setLoginUser }) => {
+const Login = () => {
   const { setIsAuthenticated } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const setLoginUser = useSelector((state) => state.users.users);
 
   const handleLogin = async (event) => {
     event.preventDefault();

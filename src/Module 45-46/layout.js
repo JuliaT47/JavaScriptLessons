@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Layout = () => {
+  const isFetching = useSelector((state) => state.users.loading);
   return (
     <>
       <header>
